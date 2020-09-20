@@ -11,8 +11,17 @@
 - 단순/다중 선형 회귀분석 모두 종속변수 Y가 연속형일때 사용함
 - 회귀계수를 추정할 때 train 데이터의 오차제곱합을 최소화시키는 값을 찾는다.
 2.1 로지스틱 회귀분석
-- 종속변수가 범주형이면서 0, 1인 경우 사용하는 회귀분석이다.
+- log odds와 독립변수 사이의 선형성을 가정하며 종속변수가 범주형일 때 사용하는 회귀분석이다.
 - 회귀계수를 추정할 때, likelihood를 최대화시키는 값을 찾음
+- mutinomial logistic regression 의 경우 y의 범주가 3개 이상이며 명목형일때 사용하는 로지스틱 회귀분석이다.
+2.2 proportional odds model
+- 일반화된 선형모델 중 하나로 이산 또는 연속 공변량에 대한 순서 반응의 의존성을 모델링하는 데 사용되는 모델이다.
+- 로지스틱 회귀분석과 마찬가지로 log odds와 독립변수 사이의 선형성을 가정한다.
+- proportional odds assumption을 확인한 후 사용해야 한다.
+ (각 independent variable이 dependent variable에 대해 갖는 odds ratio가 dependent variable의 각 response variable에 대해 일정해야한다는 가설)
+- mutinomial 로지스틱 회귀분석에 비해 예측이 필요한 회귀계수의 숫자가 작다.
+- 동일한 데이터에 두 모델을 적용하였을 때, mutinomial 로지스틱 회귀모델의 추정치들이 proportional odds model의 추정치에 비하여 더 큰 standard error를 갖는 경향이 있다.
+
 
 3. Naïve Bayes Classification (나이브베이즈 분류)
 - 특성들 사이의 독립을 가정하는 베이즈 정리를 적용한 확률 분류기의 일종이다
